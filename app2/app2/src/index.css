@@ -1,0 +1,210 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.RouterList {
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  list-style: none;
+  flex: row;
+}
+
+.RouterElm {
+  font-size: 18pt;
+  list-style-type: none;
+  display: flex;
+}
+
+.BannerListDesktop {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  justify-content: space-around;
+  color: white;
+  background-color: black;
+  position: fixed;
+  width: 100%;
+  bottom:0;
+}
+.BannerListMobile {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  list-style: none;
+  justify-content: space-around;
+  color: white;
+  background-color: black;
+  position: fixed;
+  width: 100%;
+  bottom:0;
+}
+
+.BannerElm {
+  list-style: none;
+  display: flex;
+}
+
+.BannerElmList {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
+
+.BannerElmListSublist {
+  list-style: none;
+  display: flex;
+}
+
+.home-desktop {
+  font-size: auto;
+}
+
+.home-desktop h1 {
+  text-align: center;
+  padding: 20%;
+
+  font-size: 32pt;
+}
+
+.home-mobile {
+  text-align: center;
+  padding: 20%;
+
+  font-size: 14pt;
+}
+
+.about-desktop {
+  text-align: center;
+  padding: 10%;
+  font-size: 15pt;
+}
+
+.about-mobile {
+  text-align: center;
+  background-color: red;
+
+  font-size: 15;
+}
+
+.ServicesList {
+
+  text-align: center;
+  columns: 3;
+  list-style: none;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+  padding-bottom: 3%;
+}
+
+.services-desktop h1 {
+  text-align: center;
+  padding: 3%;
+  font-size: 15;
+}
+
+.services-mobile {
+  text-align: center;
+  columns: 1;
+}
+
+#next {
+  width: 5%;
+  height: 5%;
+  background-color: red;
+}
+
+.GalleryViewer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  list-style: none;
+  align-items: center;
+  padding-bottom: 5%;
+  padding-top: 5%;
+  text-align: center;
+}
+
+
+.gallery-desktop {
+  text-align: center;
+  font-size: 32;
+}
+
+.FAQsDesktop {
+  
+  text-align: center;
+  font-size: 32;
+}
+
+.QNAsDesktop {
+  padding: 5%;
+  text-align: center;
+  columns: 3;
+  list-style: none;
+}
+
+.FAQsMobile {
+  padding: 2%;
+  text-align: center;
+  columns: 1;
+  list-style: none;
+}
+
+.ViewControlLeft {
+  display: flex;
+  flex-direction: row;
+  -webkit-transform: scaleX(-1);  
+}
+
+.ViewControlRight {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.contact-desktop {
+  text-align: left;
+}
+
+.contact-desktop h1 {
+  text-align:center ;
+}
+
+.contact-form {
+  padding: 5%;
+ text-align: left;
+  display: flex;
+  flex-direction: column;
+
+}
+
+
+
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+
+textarea {
+  width: 100%;
+  height: 25%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
