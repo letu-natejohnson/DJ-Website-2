@@ -13,7 +13,8 @@ import {
   import { useResizeDetector } from 'react-resize-detector';
 import ReactDOM from 'react-dom';
 import './index.css';
-
+import './image-gallery.css';
+import ImageGallery from 'react-image-gallery';
 
 
 
@@ -41,12 +42,6 @@ var services = [
   ["Generic #12", "Another service desc"] 
 ]
 
-var galleryPhotos = [
-  "https://images.ctfassets.net/hrltx12pl8hq/5Dp0tKk1E51g8tKoGZiMpk/73255b014aac62b317fc0d40334862e9/Wedding.jpg?fit=fill&w=480&h=270",
-  "https://media.istockphoto.com/photos/fixing-grooms-bowtie-at-a-wedding-picture-id1037721924?k=20&m=1037721924&s=612x612&w=0&h=Z3tcxzVrNJE2ZTcrMtIUwMI5qd2nqbLFRINyMHkHG3s=",
-  "https://media.istockphoto.com/photos/best-man-performing-speech-for-toast-at-wedding-reception-picture-id941382378?k=20&m=941382378&s=612x612&w=0&h=cUnBZr-Mn_dK9lHf1xkVckyLn_8TJH9L8uLZ0SjB-80="
-]
-
 var QNAs = [
   ["Question? ", "Answer."],
   ["Question? ", "Answer."],
@@ -62,7 +57,20 @@ var QNAs = [
   ["Question? ", "Answer."]
 ]
 
-
+const images = [
+  {
+    original: 'http://lorempixel.com/1000/600/nature/1/',
+    thumbnail: 'http://lorempixel.com/250/150/nature/1/',
+  },
+  {
+    original: 'http://lorempixel.com/1000/600/nature/2/',
+    thumbnail: 'http://lorempixel.com/250/150/nature/2/'
+  },
+  {
+    original: 'http://lorempixel.com/1000/600/nature/3/',
+    thumbnail: 'http://lorempixel.com/250/150/nature/3/'
+  }
+]
 
 const AdaptiveComponent = ({ width, height }) => {
   const [color, setColor] = useState('red');
@@ -317,27 +325,10 @@ function Footer(props) {
 
 function GalleryViewer (props) {
  
-  if (gallery_index < galleryPhotos.length || gallery_index < 0) { gallery_index = 0 }
-  var gallery_index = 0;
-  var current_photo = galleryPhotos[gallery_index];
-  
   return (
-   
-    <ul className =" GalleryViewer">
-   
-    <li>
-      <button className = "ViewControlLeft" onClick={ () => {gallery_index -= 1}}><img src="https://static.thenounproject.com/png/2354422-200.png" width={50} height={50}/> </button>
-    </li>
-    <li>
-    <img src={current_photo} alt="Galler photo"></img>
-    </li>
-    <li>
-    <button className = "ViewControlRight" onClick={ () => {gallery_index += 1} }><img src="https://static.thenounproject.com/png/2354422-200.png" width={50} height={50}/> </button>
-    </li>
-  </ul>
-
-    
-  )
+    <ImageGallery items={images} />
+  );
+  
 }
 
 function BannerElement (props) {
