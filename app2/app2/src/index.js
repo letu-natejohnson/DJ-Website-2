@@ -234,7 +234,6 @@ function Gallery(props) {
   } else {
       return (
         <div className="gallery-desktop">
-          <h1> Gallery </h1>
         <GalleryViewer />
         </div>
         
@@ -306,9 +305,9 @@ function Footer(props) {
       return (
         <div className = "bannerMobile">
         <ul className="BannerListMobile">
-        <li className="BannerElm"><BannerElement label="Instagram: @CD_Entertainment" iconSource={insta} iconAlt="IG" /></li>
-        <li className="BannerElm"><BannerElement label="Phone: (XXX) XXX-XXXX" iconSource={phone} iconAlt="PHONE" /></li>
-        <li className="BannerElm"><BannerElement label="Email: hello@cdentertainment.com" iconSource={email} iconAlt="EMAIL" /></li>
+        <li className="BannerElm"><BannerElement label="Instagram: @cd_entertainment" iconSource={insta} iconAlt="IG" /></li>
+        <li className="BannerElm"><BannerElement label="Phone: (903) 780-9096" iconSource={phone} iconAlt="PHONE" /></li>
+        <li className="BannerElm"><BannerElement label="Email: wearecdentertainment@gmail.com" iconSource={email} iconAlt="EMAIL" /></li>
         </ul>
       </div>
       )
@@ -317,8 +316,8 @@ function Footer(props) {
         <div className = "bannerDesktop">
           <ul className="BannerListDesktop">
           <li className="BannerElm"><BannerElement label="Instagram: @CD_Entertainment" iconSource={insta} iconAlt="IG" /></li>
-          <li className="BannerElm"><BannerElement label="Phone: (XXX) XXX-XXXX" iconSource={phone} iconAlt="PHONE" /></li>
-          <li className="BannerElm"><BannerElement label="Email: hello@cdentertainment.com" iconSource={email} iconAlt="EMAIL" /></li>
+          <li className="BannerElm"><BannerElement label="Phone: (903) 780-9096" iconSource={phone} iconAlt="PHONE" /></li>
+          <li className="BannerElm"><BannerElement label="Email: wearecdentertainment@gmail.com" iconSource={email} iconAlt="EMAIL" /></li>
           </ul>
         </div>
         
