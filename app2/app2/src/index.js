@@ -15,6 +15,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import './image-gallery.css';
 import ImageGallery from 'react-image-gallery';
+import insta from './instagram.png';
+import phone from './phone.png';
+import email from './email.png';
 
 
 
@@ -86,7 +89,7 @@ const AdaptiveComponent = ({ width, height }) => {
     <nav >
     <ul className="RouterList">
         <li className="RouterElm">
-        <Link to="/">Home</Link>
+        <Link to="/">CD Entertainment</Link>
         </li>
         <li className="RouterElm">
         <Link to="/about">About</Link>
@@ -159,7 +162,7 @@ function Home(props) {
   } else {
     return (
       <div className="home-desktop">
-        <h1>CD Entertainment</h1>
+        <h1></h1>
       </div>
       
     );
@@ -303,9 +306,9 @@ function Footer(props) {
       return (
         <div className = "bannerMobile">
         <ul className="BannerListMobile">
-        <li className="BannerElm"><BannerElement label="Instagram :" content="@CD_Entertainment" iconSource="https://cdn-icons-png.flaticon.com/512/174/174855.png" iconAlt="IG" /></li>
-        <li className="BannerElm"><BannerElement label="Phone :" content="(XXX) XXX-XXXX" iconSource="phone.png" iconAlt="PHONE" /></li>
-        <li className="BannerElm"><BannerElement label="Email :" content="hello@cdentertainment.com" iconSource="email.png" iconAlt="EMAIL" /></li>
+        <li className="BannerElm"><BannerElement label="Instagram: @CD_Entertainment" iconSource={insta} iconAlt="IG" /></li>
+        <li className="BannerElm"><BannerElement label="Phone: (XXX) XXX-XXXX" iconSource={phone} iconAlt="PHONE" /></li>
+        <li className="BannerElm"><BannerElement label="Email: hello@cdentertainment.com" iconSource={email} iconAlt="EMAIL" /></li>
         </ul>
       </div>
       )
@@ -313,9 +316,9 @@ function Footer(props) {
       return (
         <div className = "bannerDesktop">
           <ul className="BannerListDesktop">
-          <li className="BannerElm"><BannerElement label="Instagram :" content="@CD_Entertainment" iconSource="./insta.png" iconAlt="IG" /></li>
-          <li className="BannerElm"><BannerElement label="Phone :" content="(XXX) XXX-XXXX" iconSource="phone.png" iconAlt="PHONE" /></li>
-          <li className="BannerElm"><BannerElement label="Email :" content="hello@cdentertainment.com" iconSource="email.png" iconAlt="EMAIL" /></li>
+          <li className="BannerElm"><BannerElement label="Instagram: @CD_Entertainment" iconSource={insta} iconAlt="IG" /></li>
+          <li className="BannerElm"><BannerElement label="Phone: (XXX) XXX-XXXX" iconSource={phone} iconAlt="PHONE" /></li>
+          <li className="BannerElm"><BannerElement label="Email: hello@cdentertainment.com" iconSource={email} iconAlt="EMAIL" /></li>
           </ul>
         </div>
         
@@ -336,7 +339,7 @@ function BannerElement (props) {
     return (
       <ul className="BannerElmList">
         <li className="BannerElmListSublist">
-          <img src={props.content} alt={props.iconAlt}></img>
+          <img src={props.iconSource} alt={props.iconAlt} width="20px" height="20px"></img>
         </li>
         <li className="BannerElmListSublist">
           <p>{props.label} </p>

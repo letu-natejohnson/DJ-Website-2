@@ -32,8 +32,8 @@ code {
   flex-direction: row;
   list-style: none;
   justify-content: space-around;
-  color: white;
-  background-color: black;
+  color: whitesmoke;
+  background-color:mediumslateblue;
   position: fixed;
   width: 100%;
   bottom:0;
@@ -60,15 +60,19 @@ code {
   display: flex;
   flex-direction: row;
   list-style: none;
+  gap: 10px;
 }
 
 .BannerElmListSublist {
   list-style: none;
   display: flex;
+  align-items: center;
 }
 
 .home-desktop {
   font-size: auto;
+
+  background-image: url('./homepage.png');
 }
 
 .home-desktop h1 {
@@ -82,7 +86,8 @@ code {
   text-align: center;
   padding: 20%;
 
-  font-size: 14pt;
+  font-size: 14pt;     
+ 
 }
 
 .about-desktop {
@@ -208,3 +213,13 @@ textarea {
   box-sizing: border-box;
 }
 
+a:link { text-decoration: none; color: black;}
+
+
+a:visited { text-decoration: none; color: black;}
+
+
+a:hover { text-decoration: none; color: black; transform: scale(1.05); }
+
+
+a:active { text-decoration: none; color: black;}
