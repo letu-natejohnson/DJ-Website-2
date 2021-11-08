@@ -29,23 +29,17 @@ code {
 
 .BannerListDesktop {
   display: flex;
+  justify-content: space-around;
+  background-color:mediumslateblue;
+  width: 100%;
+  height: 65px;
+}
+.BannerListMobile {
+  display: flex;
   flex-direction: row;
   list-style: none;
   justify-content: space-around;
   background-color:mediumslateblue;
-
-}
-.BannerListMobile {
-  display: flex;
-  text-align: center;
-  flex-direction: column;
-  list-style: none;
-  justify-content: space-around;
-  color: white;
-  background-color: mediumslateblue;
-  position: fixed;
-  width: 100%;
-  bottom:0;
 }
 
 .BannerElm {
@@ -67,29 +61,15 @@ code {
   align-items: center;
 }
 
-.home-desktop {
-  font-size: auto;
-  background-image: url('./homepage.png');
-}
-
-.home-desktop h1 {
-  text-align: center;
-  padding: 20%;
-
-  font-size: 32pt;
-}
-
 .home-mobile {
-  text-align: center;
-  padding: 20%;
-
-  font-size: 14pt;     
+  font-size: auto;
+  background-image: url('./homepage.png');    
  
 }
 
 .about-desktop {
   text-align: center;
-  padding: 10%;
+  padding: 5%;
   font-size: 15pt;
 }
 
@@ -234,12 +214,15 @@ a.banner:hover { text-decoration: none; color: white; transform: scale(1.009); }
 
 a.banner:active { text-decoration: none; color: white;}
 
-.footer{
-  margin-top: 1rem;
-  padding: 1rem;
-  background-color: mediumslateblue;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
+
+.about-image {
+  width: 500px;
+  height: 600px;
+}
+
+.bg-container {
+  background-image: url("./homepage.png");
+  width:100%;
+  height:100%;
+  background-size:contain;
 }
