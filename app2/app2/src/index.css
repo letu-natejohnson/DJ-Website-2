@@ -139,15 +139,15 @@ code {
   justify-content: space-around;
   list-style: none;
   align-items: center;
-  padding-bottom: 5%;
-  padding-top: 5%;
-  text-align: center;
 }
 
-
 .gallery-desktop {
-  text-align: center;
-  font-size: 32;
+  display: flex;
+  position: absolute;
+  right: 0; left: 0;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
 .FAQsDesktop {

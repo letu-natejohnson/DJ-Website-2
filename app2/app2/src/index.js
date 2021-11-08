@@ -257,7 +257,9 @@ function Services(props) {
 function Gallery(props) {
   if (props.x < MOBILETHRESHHOLD) {
     return (
-      <h1>hello world</h1>
+      <div className="gallery-desktop">
+        <GalleryViewer />
+      </div>
     );
   } else {
     return (
