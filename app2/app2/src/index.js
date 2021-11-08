@@ -89,22 +89,22 @@ const AdaptiveComponent = ({ width, height }) => {
     <nav >
     <ul className="RouterList">
         <li className="RouterElm">
-        <Link to="/">CD Entertainment</Link>
+        <Link to="/" class="menu">CD Entertainment</Link>
         </li>
         <li className="RouterElm">
-        <Link to="/about">About</Link>
+        <Link to="/about" class="menu">About</Link>
         </li>
         <li className="RouterElm">
-        <Link to="/services">Services</Link>
+        <Link to="/services" class="menu">Services</Link>
         </li>
         <li className="RouterElm">
-        <Link to="/gallery">Gallery</Link>
+        <Link to="/gallery" class="menu">Gallery</Link>
         </li>
         <li className="RouterElm">
-        <Link to="/faqs">FAQs</Link>
+        <Link to="/faqs" class="menu">FAQs</Link>
         </li>
         <li className="RouterElm">
-        <Link to="/contact">Contact</Link>
+        <Link to="/contact" class="menu">Contact</Link>
         </li>
     </ul>
     </nav>
@@ -167,6 +167,23 @@ function Home(props) {
       
     );
   }    
+}
+
+function BannerElement (props) {
+    
+  return (
+    <ul className="BannerElmList">
+      <li className="BannerElmListSublist">
+        <img src={props.iconSource} alt={props.iconAlt} width="20px" height="20px"></img>
+      </li>
+      <li className="BannerElmListSublist">
+        <a href={props.url} target="_blank" class="banner">{props.label}</a>
+      </li>
+      <li className="BannerElmListSublist">
+        <p> {props.content}</p>
+      </li>
+    </ul>
+  )
 }
 
 function About(props) {
@@ -313,13 +330,11 @@ function Footer(props) {
       )
   } else {
       return (
-        <div className = "bannerDesktop">
-          <ul className="BannerListDesktop">
-          <li className="BannerElm"><BannerElement label="Instagram: @CD_Entertainment" iconSource={insta} iconAlt="IG" /></li>
-          <li className="BannerElm"><BannerElement label="Phone: (903) 780-9096" iconSource={phone} iconAlt="PHONE" /></li>
-          <li className="BannerElm"><BannerElement label="Email: wearecdentertainment@gmail.com" iconSource={email} iconAlt="EMAIL" /></li>
+          <ul className="BannerListDesktop footer">
+          <li className="BannerElm"><BannerElement label="Instagram: @CD_Entertainment" iconSource={insta} iconAlt="IG" url="https://www.instagram.com/cd__entertainment/"/></li>
+          <li className="BannerElm"><BannerElement label="Phone: (903) 780-9096" iconSource={phone} iconAlt="PHONE" url="tel:9037809096"/></li>
+          <li className="BannerElm"><BannerElement label="Email: wearecdentertainment@gmail.com" iconSource={email} iconAlt="EMAIL" url="mailto:wearecdentertainment@gmail.com?Subject=Question%20About%20DJ%20Services"/></li>
           </ul>
-        </div>
         
       );
   }    
@@ -333,22 +348,6 @@ function GalleryViewer (props) {
   
 }
 
-function BannerElement (props) {
-    
-    return (
-      <ul className="BannerElmList">
-        <li className="BannerElmListSublist">
-          <img src={props.iconSource} alt={props.iconAlt} width="20px" height="20px"></img>
-        </li>
-        <li className="BannerElmListSublist">
-          <p>{props.label} </p>
-        </li>
-        <li className="BannerElmListSublist">
-          <p> {props.content}</p>
-        </li>
-      </ul>
-    )
-}
 
 
 // If you want to start measuring performance in your app, pass a function

@@ -32,11 +32,8 @@ code {
   flex-direction: row;
   list-style: none;
   justify-content: space-around;
-  color: whitesmoke;
   background-color:mediumslateblue;
-  position: fixed;
-  width: 100%;
-  bottom:0;
+
 }
 .BannerListMobile {
   display: flex;
@@ -45,7 +42,7 @@ code {
   list-style: none;
   justify-content: space-around;
   color: white;
-  background-color: black;
+  background-color: mediumslateblue;
   position: fixed;
   width: 100%;
   bottom:0;
@@ -54,6 +51,7 @@ code {
 .BannerElm {
   list-style: none;
   display: flex;
+  background-color:mediumslateblue;
 }
 
 .BannerElmList {
@@ -71,7 +69,6 @@ code {
 
 .home-desktop {
   font-size: auto;
-
   background-image: url('./homepage.png');
 }
 
@@ -213,13 +210,36 @@ textarea {
   box-sizing: border-box;
 }
 
-a:link { text-decoration: none; color: black;}
+a.menu:link { text-decoration: none; color: black;}
 
 
-a:visited { text-decoration: none; color: black;}
+a.menu:visited { text-decoration: none; color: black;}
 
 
-a:hover { text-decoration: none; color: black; transform: scale(1.05); }
+a.menu:hover { text-decoration: none; color: black; transform: scale(1.05); }
 
 
-a:active { text-decoration: none; color: black;}
+a.menu:active { text-decoration: none; color: black;}
+
+
+
+a.banner:link { text-decoration: none; color: white; background-color:mediumslateblue;}
+
+
+a.banner:visited { text-decoration: none; color: white}
+
+
+a.banner:hover { text-decoration: none; color: white; transform: scale(1.009); }
+
+
+a.banner:active { text-decoration: none; color: white;}
+
+.footer{
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: mediumslateblue;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
