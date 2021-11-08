@@ -164,7 +164,7 @@ function Home(props) {
   } else {
     return (
       <div className="home-desktop bg-container">
-       <img src={background}></img>
+        <img src={background}></img>
       </div>
 
     );
@@ -194,30 +194,39 @@ function About(props) {
 
     return (
       <div className="about-mobile">
-        <img src={about} alt="OWNERS" />
-        <div className="about-mobile-desc">
-          <p>Hope and Bryson began deejaying with company founder Charlie Downs in 2020. When business began to boom again in 2021,
-            Hope and Bryson took over the company and have been running it ever since. Hope and Bryson were engaged in July 2021.
-            Their goals in deejaying are to bring the music you want with the service you deserve in a fun, friendly, customer-first
+        <img src={about} alt="OWNERS" className="about-image-desktop" />
+        <div className="about-text">
+        <div className="story">
+          <h2>OUR STORY</h2>
+        </div>
+        <div className="about-desktop-desc">
+          <p>Hope and Bryson began deejaying with company founder<br></br>Charlie Downs in 2020. When business began to boom again in 2021,
+          <br></br>Hope and Bryson took over the company and have been running it ever since. <br></br>
+            Their goals in deejaying are to bring the music you want with <br></br>the service you deserve in a fun, friendly, customer-first
             environment.
           </p>
-
-        </div>
+          </div>
+          </div>
       </div>
     );
   } else {
     return (
       <div className="about-desktop">
-        <img src={about} alt="OWNERS" class="about-image" />
+        <img src={about} alt="OWNERS" className="about-image-desktop" />
+        <div className="about-text">
+        <div className="story">
+          <h1>OUR STORY</h1>
+        </div>
         <div className="about-desktop-desc">
-          <p>Hope and Bryson began deejaying with company founder Charlie Downs in 2020. When business began to boom again in 2021,
-            Hope and Bryson took over the company and have been running it ever since. Hope and Bryson were engaged in July 2021.
-            Their goals in deejaying are to bring the music you want with the service you deserve in a fun, friendly, customer-first
+          <p>Hope and Bryson began deejaying with company founder<br></br>Charlie Downs in 2020. When business began to boom again in 2021,
+          <br></br>Hope and Bryson took over the company and have been running it ever since. <br></br>
+            Their goals in deejaying are to bring the music you want with <br></br>the service you deserve in a fun, friendly, customer-first
             environment.
           </p>
-
-        </div>
-      </div>
+          </div>
+          </div>
+          </div>
+        
     );
   }
 }
