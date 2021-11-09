@@ -42,18 +42,12 @@ var services = [
 ]
 
 var QNAs = [
-  ["Question? ", "Answer."],
-  ["Question? ", "Answer."],
-  ["Question? ", "Answer."],
-  ["Question? ", "Answer."],
-  ["Question? ", "Answer."],
-  ["Question? ", "Answer."],
-  ["Question? ", "Answer."],
-  ["Question? ", "Answer."],
-  ["Question? ", "Answer."],
-  ["Question? ", "Answer."],
-  ["Question? ", "Answer."],
-  ["Question? ", "Answer."]
+  ["Do you charge a fee for travel?", "No! All East Texas travel is covered by your deposit."],
+  ["What if we cancel the event?", "If you cancel within 30 days of your event, you will be able to receive a full refund!"],
+  ["Do you have microphones?", "Yes! We have three different types of microphones to accommodate all of your needs."],
+  ["What music do you play?", "Before the event we take song and genre requests and then we will play music that specifically fits your event and guests."],
+  ["Do lights cost extra?", "No! We are an all inclusive company and provide you with everything for one set rate."],
+  ["Do you do wedding ceremonies?", "Yes! We can provide music and microphones for your ceremony."]
 ]
 
 const images = [
