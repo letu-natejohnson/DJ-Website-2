@@ -33,18 +33,12 @@ var mobi = false;
 var MOBILETHRESHHOLD = 700;
 
 var services = [
-  ["Generic", "Service desc"],
-  ["Generic #2", "Another service desc"],
-  ["Generic #3", "Another service desc"],
-  ["Generic #4", "Another service desc"],
-  ["Generic #5", "Another service desc"],
-  ["Generic #6", "Service desc"],
-  ["Generic #7", "Another service desc"],
-  ["Generic #8", "Another service desc"],
-  ["Generic #9", "Another service desc"],
-  ["Generic #10", "Another service desc"],
-  ["Generic #11", "Another service desc"],
-  ["Generic #12", "Another service desc"]
+  ["Music", "We play personally catered music crafted to match you and your guests"],
+  ["Master of Ceremonies", "We make announcements as you request them throughout the event"],
+  ["Lights and Bubbles", "We have a bubble machine and three light setup that includes a wash light, spot light, and a large LED (optional)"],
+  ["Multi-faceted Company", "We are not a one-genre service company - we play all kinds of music and host all kinds of events"],
+  ["Time Oriented", "We show up early to make sure everything runs swiftly and smoothly"],
+  ["Multi-talented People", "Our skills don’t stop at emceeing and deejaying - we can also script the order of events, handle video elements, and much more!"],
 ]
 
 var QNAs = [
@@ -63,10 +57,6 @@ var QNAs = [
 ]
 
 const images = [
-  {
-    original: 'http://lorempixel.com/1000/600/nature/1/',
-    thumbnail: 'http://lorempixel.com/250/150/nature/1/',
-  },
   {
     original: 'http://lorempixel.com/1000/600/nature/2/',
     thumbnail: 'http://lorempixel.com/250/150/nature/2/'
