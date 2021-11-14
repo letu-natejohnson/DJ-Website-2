@@ -4,16 +4,22 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { containerStyles } from 'react';
 import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-  } from "react-router-dom"; 
-  import { withResizeDetector } from 'react-resize-detector';
-  import { useResizeDetector } from 'react-resize-detector';
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import { withResizeDetector } from 'react-resize-detector';
+import { useResizeDetector } from 'react-resize-detector';
 import ReactDOM from 'react-dom';
 import './index.css';
-
+import './image-gallery.css';
+import ImageGallery from 'react-image-gallery';
+import insta from './instagram.png';
+import phone from './phone.png';
+import email from './email.png';
+import about from './about.jpg';
+import background from './homepage.png';
 
 
 
@@ -26,43 +32,34 @@ var mobi = false;
 
 var MOBILETHRESHHOLD = 700;
 
-var services = [ 
-  ["Generic", "Service desc"],
-  ["Generic #2", "Another service desc"],
-  ["Generic #3", "Another service desc"],
-  ["Generic #4", "Another service desc"] ,
-  ["Generic #5", "Another service desc"] ,
-  ["Generic #6", "Service desc"],
-  ["Generic #7", "Another service desc"] ,
-  ["Generic #8", "Another service desc"],
-  ["Generic #9", "Another service desc"] ,
-  ["Generic #10", "Another service desc"] ,
-  ["Generic #11", "Another service desc"] ,
-  ["Generic #12", "Another service desc"] 
-]
-
-var galleryPhotos = [
-  "https://images.ctfassets.net/hrltx12pl8hq/5Dp0tKk1E51g8tKoGZiMpk/73255b014aac62b317fc0d40334862e9/Wedding.jpg?fit=fill&w=480&h=270",
-  "https://media.istockphoto.com/photos/fixing-grooms-bowtie-at-a-wedding-picture-id1037721924?k=20&m=1037721924&s=612x612&w=0&h=Z3tcxzVrNJE2ZTcrMtIUwMI5qd2nqbLFRINyMHkHG3s=",
-  "https://media.istockphoto.com/photos/best-man-performing-speech-for-toast-at-wedding-reception-picture-id941382378?k=20&m=941382378&s=612x612&w=0&h=cUnBZr-Mn_dK9lHf1xkVckyLn_8TJH9L8uLZ0SjB-80="
+var services = [
+  ["Music", "We play personally catered music crafted to match you and your guests"],
+  ["Master of Ceremonies", "We make announcements as you request them throughout the event"],
+  ["Lights and Bubbles", "We have a bubble machine and three light setup that includes a wash light, spot light, and a large LED (optional)"],
+  ["Multi-faceted Company", "We are not a one-genre service company - we play all kinds of music and host all kinds of events"],
+  ["Time Oriented", "We show up early to make sure everything runs swiftly and smoothly"],
+  ["Multi-talented People", "Our skills don’t stop at emceeing and deejaying - we can also script the order of events, handle video elements, and much more!"],
 ]
 
 var QNAs = [
-  ["Question? ", "Answer."],
-  ["Question? ", "Answer."],
-  ["Question? ", "Answer."],
-  ["Question? ", "Answer."],
-  ["Question? ", "Answer."],
-  ["Question? ", "Answer."],
-  ["Question? ", "Answer."],
-  ["Question? ", "Answer."],
-  ["Question? ", "Answer."],
-  ["Question? ", "Answer."],
-  ["Question? ", "Answer."],
-  ["Question? ", "Answer."]
+  ["Do you charge a fee for travel?", "No! All East Texas travel is covered by your deposit."],
+  ["What if we cancel the event?", "If you cancel within 30 days of your event, you will be able to receive a full refund!"],
+  ["Do you have microphones?", "Yes! We have three different types of microphones to accommodate all of your needs."],
+  ["What music do you play?", "Before the event we take song and genre requests and then we will play music that specifically fits your event and guests."],
+  ["Do lights cost extra?", "No! We are an all inclusive company and provide you with everything for one set rate."],
+  ["Do you do wedding ceremonies?", "Yes! We can provide music and microphones for your ceremony."]
 ]
 
-
+const images = [
+  {
+    original: 'http://lorempixel.com/1000/600/nature/2/',
+    thumbnail: 'http://lorempixel.com/250/150/nature/2/'
+  },
+  {
+    original: 'http://lorempixel.com/1000/600/nature/3/',
+    thumbnail: 'http://lorempixel.com/250/150/nature/3/'
+  }
+]
 
 const AdaptiveComponent = ({ width, height }) => {
   const [color, setColor] = useState('red');
@@ -74,55 +71,55 @@ const AdaptiveComponent = ({ width, height }) => {
 
   return (
     <Router>
-    <div className = "Router">
-    <nav >
-    <ul className="RouterList">
-        <li className="RouterElm">
-        <Link to="/">Home</Link>
-        </li>
-        <li className="RouterElm">
-        <Link to="/about">About</Link>
-        </li>
-        <li className="RouterElm">
-        <Link to="/services">Services</Link>
-        </li>
-        <li className="RouterElm">
-        <Link to="/gallery">Gallery</Link>
-        </li>
-        <li className="RouterElm">
-        <Link to="/faqs">FAQs</Link>
-        </li>
-        <li className="RouterElm">
-        <Link to="/contact">Contact</Link>
-        </li>
-    </ul>
-    </nav>
+      <div className="Router">
+        <nav >
+          <ul className="RouterList">
+            <li className="RouterElm">
+              <Link to="/" class="menu">CD Entertainment</Link>
+            </li>
+            <li className="RouterElm">
+              <Link to="/about" class="menu">About</Link>
+            </li>
+            <li className="RouterElm">
+              <Link to="/services" class="menu">Services</Link>
+            </li>
+            <li className="RouterElm">
+              <Link to="/gallery" class="menu">Gallery</Link>
+            </li>
+            <li className="RouterElm">
+              <Link to="/faqs" class="menu">FAQs</Link>
+            </li>
+            <li className="RouterElm">
+              <Link to="/contact" class="menu">Contact</Link>
+            </li>
+          </ul>
+        </nav>
 
-    {/* A <Switch> looks through its children <Route>s and
+        {/* A <Switch> looks through its children <Route>s and
         renders the first one that matches the current URL. */}
         <Switch>
-        <Route path="/about">
-            <About  x={width} y={height}/>
-        </Route>
-        <Route path="/services">
+          <Route path="/about">
+            <About x={width} y={height} />
+          </Route>
+          <Route path="/services">
             <Services x={width} y={height} />
-        </Route>
-        <Route path="/gallery">
+          </Route>
+          <Route path="/gallery">
             <Gallery x={width} y={height} />
-        </Route>
-        <Route path="/FAQs">
+          </Route>
+          <Route path="/FAQs">
             <FAQs x={width} y={height} />
-        </Route>
-        <Route path="/contact">
+          </Route>
+          <Route path="/contact">
             <Contact x={width} y={height} />
-        </Route>
-        <Route path="/">
+          </Route>
+          <Route path="/">
             <Home x={width} y={height} />
-        </Route>
+          </Route>
         </Switch>
-    </div>
-    < Footer x={width} y={height} />
-</Router>);
+      </div>
+      < Footer x={width} y={height} />
+    </Router>);
 };
 
 const AdaptiveWithDetector = withResizeDetector(AdaptiveComponent);
@@ -134,7 +131,7 @@ CustomComponent();
 // HEADER
 ReactDOM.render(
   <React.StrictMode>
-  <AdaptiveWithDetector />    
+    <AdaptiveWithDetector />
   </React.StrictMode>,
   document.getElementById('header')
 );
@@ -142,220 +139,210 @@ ReactDOM.render(
 function Home(props) {
 
   if (props.x < MOBILETHRESHHOLD) {
-      return (
-        <div className="home-mobile">
-          <h1>CD Entertainment</h1>
-        </div>
-        
-      );
+    return (
+      <div className="home-mobile">
+        <div></div>
+      </div>
+
+    );
   } else {
     return (
-      <div className="home-desktop">
-        <h1>CD Entertainment</h1>
+      <div className="home-desktop bg-container">
+        <img src={background}></img>
       </div>
-      
+
     );
-  }    
+  }
+}
+
+function BannerElement(props) {
+
+  return (
+    <ul className="BannerElmList">
+      <li className="BannerElmListSublist">
+        <img src={props.iconSource} alt={props.iconAlt} width="20px" height="20px"></img>
+      </li>
+      <li className="BannerElmListSublist">
+        <a href={props.url} target="_blank" class="banner">{props.label}</a>
+      </li>
+      <li className="BannerElmListSublist">
+        <p> {props.content}</p>
+      </li>
+    </ul>
+  )
 }
 
 function About(props) {
-  console.log("Width: " , props.x)
+  console.log("Width: ", props.x)
   if (props.x < MOBILETHRESHHOLD) {
-   
-      return (
-        <div className="about-mobile">
-        <h1>About Us</h1>
-        <img src="about.png" alt="OWNERS"/>
-        <div className="about-mobile-desc">
-         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  </p>
-         <p> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  </p>
-         <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.  </p>
-         <p> Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
-        
+
+    return (
+      <div className="about-mobile">
+        <img src={about} alt="OWNERS" className="about-image-desktop" />
+        <div className="about-text">
+        <div className="story">
+          <h2>OUR STORY</h2>
         </div>
-       </div>
-      );
+        <div className="about-desktop-desc">
+          <p>Hope and Bryson began deejaying with company founder<br></br>Charlie Downs in 2020. When business began to boom again in 2021,
+          <br></br>Hope and Bryson took over the company and have been running it ever since. <br></br>
+            Their goals in deejaying are to bring the music you want with <br></br>the service you deserve in a fun, friendly, customer-first
+            environment.
+          </p>
+          </div>
+          </div>
+      </div>
+    );
   } else {
-      return (
-        <div className="about-desktop">
-         <h1>About Us</h1>
-         <img src="about.png" alt="OWNERS"/>
-         <div className="about-desktop-desc">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  </p>
-          <p> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  </p>
-          <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.  </p>
-          <p> Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
-         
-         </div>
+    return (
+      <div className="about-desktop">
+        <img src={about} alt="OWNERS" className="about-image-desktop" />
+        <div className="about-text">
+        <div className="story">
+          <h1>OUR STORY</h1>
         </div>
-      );
-  }    
+        <div className="about-desktop-desc">
+          <p>Hope and Bryson began deejaying with company founder<br></br>Charlie Downs in 2020. When business began to boom again in 2021,
+          <br></br>Hope and Bryson took over the company and have been running it ever since. <br></br>
+            Their goals in deejaying are to bring the music you want with <br></br>the service you deserve in a fun, friendly, customer-first
+            environment.
+          </p>
+          </div>
+          </div>
+          </div>
+        
+    );
+  }
 }
 
 function Services(props) {
-  
+
   if (props.x < MOBILETHRESHHOLD) {
-    var renderedOutput = services.map(item =>  <li className = "ServicesListElm"> <h2> {item[0]} </h2> <p>  {item[1]} </p> </li>);
+    var renderedOutput = services.map(item => <li className="ServicesListElm"> <h2> {item[0]} </h2> <p>  {item[1]} </p> </li>);
     return (
-        <div className = "services-mobile">
-         <h2>Services Mobile</h2>
-          { renderedOutput }
-        </div>
-      );
+      <div className="services-mobile">
+        <h2>Services Mobile</h2>
+        {renderedOutput}
+      </div>
+    );
   } else {
-    var renderedOutput = services.map(item =>  <li className = "ServicesListElm"> <h2> {item[0]} </h2> <p>  {item[1]} </p> </li>);
-      return (
-        <div className = "services-desktop">
-          <h1> Services </h1>
-          <ul className = "ServicesList">
-            { renderedOutput }
-          </ul>
-        </div>
-      );
-  }    
+    var renderedOutput = services.map(item => <li className="ServicesListElm"> <h2> {item[0]} </h2> <p>  {item[1]} </p> </li>);
+    return (
+      <div className="services-desktop">
+        <h1> Services </h1>
+        <ul className="ServicesList">
+          {renderedOutput}
+        </ul>
+      </div>
+    );
+  }
 }
 
 function Gallery(props) {
   if (props.x < MOBILETHRESHHOLD) {
-      return (
-        <h1>hello world</h1>
-      );
-  } else {
-      return (
-        <div className="gallery-desktop">
-          <h1> Gallery </h1>
+    return (
+      <div className="gallery-desktop">
         <GalleryViewer />
-        </div>
-        
-        );
-  }    
+      </div>
+    );
+  } else {
+    return (
+      <div className="gallery-desktop">
+        <GalleryViewer />
+      </div>
+
+    );
+  }
 }
 
 function FAQs(props) {
   if (props.x < MOBILETHRESHHOLD) {
-    var renderedOutput = QNAs.map(item =>  <li className = "QNAsListElm"> <h2> {item[0]} </h2> <p>  {item[1]} </p> </li>);
-      return (
-        <div className="FAQsMobile">
+    var renderedOutput = QNAs.map(item => <li className="QNAsListElm"> <h2> {item[0]} </h2> <p>  {item[1]} </p> </li>);
+    return (
+      <div className="FAQsMobile">
         <h1>FAQs Desktop</h1>
-        { renderedOutput }
-        </div>
-      )
+        {renderedOutput}
+      </div>
+    )
   } else {
-    var renderedOutput = QNAs.map(item =>  <li className = "QNAsListElm"> <h2> {item[0]} </h2> <p>  {item[1]} </p> </li>);
-      return (
-        <div className="FAQsDesktop">
-          <h1>FAQs Desktop</h1>
-          <div className="QNAsDesktop">{ renderedOutput }</div>
-        </div>
-      )
-  }    
+    var renderedOutput = QNAs.map(item => <li className="QNAsListElm"> <h2> {item[0]} </h2> <p>  {item[1]} </p> </li>);
+    return (
+      <div className="FAQsDesktop">
+        <h1>FAQs Desktop</h1>
+        <div className="QNAsDesktop">{renderedOutput}</div>
+      </div>
+    )
+  }
 }
 
 function Contact(props) {
   if (props.x < MOBILETHRESHHOLD) {
     return (
-      <div className = "contact-mobile">
+      <div className="contact-mobile">
         <h1>Cotact Us</h1>
         <form className="contact-form">
-        <label for="fname">Name</label>
-        <input type="text" id= "form-name" value="John"></input> <br></br>
-        <label for="fname">Email</label>
-        <input type="text" id= "form-email" value="JohnDoe@gmail.com"></input><br></br>
-        <label for="fname">Phone Number</label>
-        <input type="text" id= "form-number" value="(XXX) XXX-XXXX"></input><br></br>
-        <label for="Message">Message</label>
-        <input type="textarea" id= "form-message" value="John"></input><br></br>
+          <label for="fname">Name</label>
+          <input type="text" id="form-name" value="John"></input> <br></br>
+          <label for="fname">Email</label>
+          <input type="text" id="form-email" value="JohnDoe@gmail.com"></input><br></br>
+          <label for="fname">Phone Number</label>
+          <input type="text" id="form-number" value="(XXX) XXX-XXXX"></input><br></br>
+          <label for="Message">Message</label>
+          <input type="textarea" id="form-message" value="John"></input><br></br>
           <input type="submit" value="submit"></input>
-      </form>
+        </form>
       </div>
-     
+
     )
   } else {
-      return (
-        <div className = "contact-desktop">
+    return (
+      <div className="contact-desktop">
         <h1>Contact Us</h1>
         <form className="contact-form">
-        <label for="fname">Name</label>
-        <input type="text" id= "form-name" value="John"></input> <br></br>
-        <label for="fname">Email</label>
-        <input type="text" id= "form-email" value="JohnDoe@gmail.com"></input><br></br>
-        <label for="fname">Phone Number</label>
-        <input type="text" id= "form-number" value="(XXX) XXX-XXXX"></input><br></br>
-        <label for="Message">Message</label>
-        <textarea id= "form-message" value="message ..."></textarea><br></br>
+          <label for="fname">Name</label>
+          <input type="text" id="form-name" value="John"></input> <br></br>
+          <label for="fname">Email</label>
+          <input type="text" id="form-email" value="JohnDoe@gmail.com"></input><br></br>
+          <label for="fname">Phone Number</label>
+          <input type="text" id="form-number" value="(XXX) XXX-XXXX"></input><br></br>
+          <label for="Message">Message</label>
+          <textarea id="form-message" value="message ..."></textarea><br></br>
           <input type="submit" value="submit"></input>
-      </form>
+        </form>
       </div>
-      )
-  }    
+    )
+  }
 }
 
 function Footer(props) {
   if (props.x < MOBILETHRESHHOLD) {
-      return (
-        <div className = "bannerMobile">
-        <ul className="BannerListMobile">
-        <li className="BannerElm"><BannerElement label="Instagram :" content="@CD_Entertainment" iconSource="https://cdn-icons-png.flaticon.com/512/174/174855.png" iconAlt="IG" /></li>
-        <li className="BannerElm"><BannerElement label="Phone :" content="(XXX) XXX-XXXX" iconSource="phone.png" iconAlt="PHONE" /></li>
-        <li className="BannerElm"><BannerElement label="Email :" content="hello@cdentertainment.com" iconSource="email.png" iconAlt="EMAIL" /></li>
-        </ul>
-      </div>
-      )
-  } else {
-      return (
-        <div className = "bannerDesktop">
-          <ul className="BannerListDesktop">
-          <li className="BannerElm"><BannerElement label="Instagram :" content="@CD_Entertainment" iconSource="./insta.png" iconAlt="IG" /></li>
-          <li className="BannerElm"><BannerElement label="Phone :" content="(XXX) XXX-XXXX" iconSource="phone.png" iconAlt="PHONE" /></li>
-          <li className="BannerElm"><BannerElement label="Email :" content="hello@cdentertainment.com" iconSource="email.png" iconAlt="EMAIL" /></li>
-          </ul>
-        </div>
-        
-      );
-  }    
-}
-
-function GalleryViewer (props) {
- 
-  if (gallery_index < galleryPhotos.length || gallery_index < 0) { gallery_index = 0 }
-  var gallery_index = 0;
-  var current_photo = galleryPhotos[gallery_index];
-  
-  return (
-   
-    <ul className =" GalleryViewer">
-   
-    <li>
-      <button className = "ViewControlLeft" onClick={ () => {gallery_index -= 1}}><img src="https://static.thenounproject.com/png/2354422-200.png" width={50} height={50}/> </button>
-    </li>
-    <li>
-    <img src={current_photo} alt="Galler photo"></img>
-    </li>
-    <li>
-    <button className = "ViewControlRight" onClick={ () => {gallery_index += 1} }><img src="https://static.thenounproject.com/png/2354422-200.png" width={50} height={50}/> </button>
-    </li>
-  </ul>
-
-    
-  )
-}
-
-function BannerElement (props) {
-    
     return (
-      <ul className="BannerElmList">
-        <li className="BannerElmListSublist">
-          <img src={props.content} alt={props.iconAlt}></img>
-        </li>
-        <li className="BannerElmListSublist">
-          <p>{props.label} </p>
-        </li>
-        <li className="BannerElmListSublist">
-          <p> {props.content}</p>
-        </li>
-      </ul>
+      <div className="BannerListMobile">
+        <li className="BannerElm"><BannerElement label="Instagram: @cd_entertainment" iconSource={insta} iconAlt="IG" url="https://www.instagram.com/cd__entertainment/" /></li>
+        <li className="BannerElm"><BannerElement label="Phone: (903) 780-9096" iconSource={phone} iconAlt="PHONE" url="tel:9037809096" /></li>
+        <li className="BannerElm"><BannerElement label="Email: wearecdentertainment@gmail.com" iconSource={email} iconAlt="EMAIL" url="mailto:wearecdentertainment@gmail.com?Subject=Question%20About%20DJ%20Services" /></li>
+      </div>
     )
+  } else {
+    return (
+      <div className="BannerListDesktop">
+        <li className="BannerElm"><BannerElement label="Instagram: @cd_entertainment" iconSource={insta} iconAlt="IG" url="https://www.instagram.com/cd__entertainment/" /></li>
+        <li className="BannerElm"><BannerElement label="Phone: (903) 780-9096" iconSource={phone} iconAlt="PHONE" url="tel:9037809096" /></li>
+        <li className="BannerElm"><BannerElement label="Email: wearecdentertainment@gmail.com" iconSource={email} iconAlt="EMAIL" url="mailto:wearecdentertainment@gmail.com?Subject=Question%20About%20DJ%20Services" /></li>
+      </div>
+
+    );
+  }
 }
+
+function GalleryViewer(props) {
+
+  return (
+    <ImageGallery items={images} />
+  );
+
+}
+
 
 
 // If you want to start measuring performance in your app, pass a function
