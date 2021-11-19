@@ -221,7 +221,7 @@ function Services(props) {
     var renderedOutput = services.map(item => <li className="ServicesListElm"> <h2> {item[0]} </h2> <p>  {item[1]} </p> </li>);
     return (
       <div className="services-mobile">
-        <h2>Services Mobile</h2>
+        <h2>Services</h2>
         {renderedOutput}
       </div>
     );
@@ -279,7 +279,7 @@ function Contact(props) {
   if (props.x < MOBILETHRESHHOLD) {
     return (
       <div className="contact-mobile">
-        <h1>Cotact Us</h1>
+        <h1>Contact Us</h1>
         <form className="contact-form">
           <label for="fname">Name</label>
           <input type="text" id="form-name" value="John"></input> <br></br>
